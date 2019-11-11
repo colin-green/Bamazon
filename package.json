@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Online shopping database",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colin-green/Bamazon.git"
+  },
+  "author": "Colin Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colin-green/Bamazon/issues"
+  },
+  "homepage": "https://github.com/colin-green/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1"
+  }
+}
