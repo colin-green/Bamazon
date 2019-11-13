@@ -17,14 +17,14 @@ var connection = mysql.createConnection({
     database: "bamazon"
   });
 
-  connection.connect(function(err) {
+connection.connect(function(err) {
 
-    if (err) throw err;
-    console.log(`Connected as ID ${connection.threadId}`);
+if (err) throw err;
+console.log(`Connected as ID ${connection.threadId}`);
 
-  });
+});
 
-  function showProducts() {
+function showProducts() {
 
     connection.query("select * from products", function(err, res) {
 
@@ -44,20 +44,20 @@ var connection = mysql.createConnection({
         promptCustomer();
     })
 
-  }
+}
 
-  function promptCustomer() {
+function promptCustomer() {
 
     inquirer.prompt([
         {
             type: 'number',
             name: 'itemToBuy',
-            message: 'Please enter the ID of the item you would like to purchase.',
+            message: 'Please enter the ID of the item you would like to purchase.'
         },
         {
             type: 'number',
             name: 'quantity',
-            message: 'How many would you like to purchase?',
+            message: 'How many would you like to purchase?'
         }
     ]).then(function(answers){
 
@@ -65,9 +65,9 @@ var connection = mysql.createConnection({
 
     })
 
-  }
+}
 
-  function placeOrder(id, quant) {
+function placeOrder(id, quant) {
 
     connection.query(`Select * from products where item_id = ${id}`, function(err, res) {
 
@@ -87,9 +87,9 @@ var connection = mysql.createConnection({
 
     })
 
-  }
+}
 
-  function continueShopping() {
+function continueShopping() {
 
     inquirer.prompt({
         type: 'confirm',
@@ -104,7 +104,7 @@ var connection = mysql.createConnection({
             connection.end();
         }
     })
-    
-  }
 
-  showProducts();
+}
+
+showProducts();
